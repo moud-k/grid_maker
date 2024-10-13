@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="styles.css">
+    <script defer src="scripts.js"></script>
 </head>
 <body>
     <h1>Welcome to my Grid Maker! Please experiment by selecting an option and/or selecting a cell.</h1>
     <div>
-        <button class="div_item">Add Row</button>
+        <button onclick="addRow()" class="div_item">Add Row</button>
         <button class="div_item">Add Column</button>
         <button class="div_item">Remove Row</button>
         <button class="div_item">Remove Column</button>
@@ -24,5 +25,7 @@
             <option>Yellow</option>
         </select>
     </div>
+    <table>
+    </table>
 </body>
 </html>
