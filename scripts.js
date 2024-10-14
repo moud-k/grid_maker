@@ -55,3 +55,21 @@ let addColumn = function()
         column_count++;
     }
 }
+
+let removeRow = function()
+{
+    if(row_count == 1)
+    {
+        let row = document.querySelector("tr");
+        row.remove();
+        row_count = 0;
+        column_count = 0;
+    }
+    else if(row_count > 1)
+    {
+        let table_rows = document.getElementsByTagName("tr");
+        let row = table_rows[table_rows.length - 1];
+        row.remove();
+        row_count--;
+    }
+}
