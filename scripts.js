@@ -73,3 +73,27 @@ let removeRow = function()
         row_count--;
     }
 }
+
+let removeColumn = function()
+{
+    if(column_count == 1)
+    {
+        let table_rows = document.getElementsByTagName("tr");
+        while(table_rows.length > 0)
+        {
+            table_rows[table_rows.length - 1].remove();
+        }
+        column_count = 0;
+        row_count = 0;
+    }
+    else if(column_count > 1)
+    {
+        let table_rows = document.getElementsByTagName("tr");
+        for(row of table_rows)
+        {
+            let cells_in_row = row.getElementsByTagName("td");
+            cells_in_row[cells_in_row.length - 1].remove();
+        }
+        column_count--;
+    }
+}
