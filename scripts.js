@@ -97,3 +97,13 @@ let removeColumn = function()
         column_count--;
     }
 }
+
+let getColor = function()
+{
+    let dropdown = document.getElementsByTagName("select")[0];
+    let color = dropdown.options[dropdown.selectedIndex].value;
+    if(color != "SELECT COLOR")
+    {
+        return color;
+    }
+}
