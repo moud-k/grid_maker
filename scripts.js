@@ -8,8 +8,10 @@ let addRow = function()
     if(row_count == 0)
     {
         let new_cell = document.createElement("td");
-        let text = document.createTextNode("he");
-        new_cell.appendChild(text);
+        new_cell.onclick = function()
+        {
+            colorCell(new_cell);
+        }
         new_row.appendChild(new_cell);
         table.appendChild(new_row);
         row_count++;
@@ -20,8 +22,10 @@ let addRow = function()
         for(let i = 0; i < column_count; i++)
         {
             let new_cell = document.createElement("td");
-            let text = document.createTextNode("he");
-            new_cell.appendChild(text);
+            new_cell.onclick = function()
+            {
+                colorCell(new_cell);
+            }
             new_row.appendChild(new_cell);
         }
         table.appendChild(new_row);
@@ -35,8 +39,10 @@ let addColumn = function()
     {
         let new_row = document.createElement("tr");
         let new_cell = document.createElement("td");
-        let text = document.createTextNode("he");
-        new_cell.appendChild(text);
+        new_cell.onclick = function()
+        {
+            colorCell(new_cell);
+        }
         new_row.appendChild(new_cell);
         table.appendChild(new_row);
         row_count++;
@@ -48,8 +54,10 @@ let addColumn = function()
         for(row of table_rows)
         {
             let new_cell = document.createElement("td");
-            let text = document.createTextNode("he");
-            new_cell.appendChild(text);
+            new_cell.onclick = function()
+            {
+                colorCell(new_cell);
+            }
             row.appendChild(new_cell);
         }
         column_count++;
@@ -105,5 +113,18 @@ let getColor = function()
     if(color != "SELECT COLOR")
     {
         return color;
+    }
+    else
+    {
+        return -1;
+    }
+}
+
+let colorCell = function(cell)
+{
+    let color = getColor();
+    if(color != -1)
+    {
+        cell.style.backgroundColor = color;
     }
 }

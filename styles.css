@@ -40,3 +40,11 @@ div{
 button:active{
     transform:scale(1.1, 1.1);
 }
+
+td{
+    height: 50px;
+    width: 50px;
+    background-color: white;
+    border-style: solid;
+    border: 1px;
+}
