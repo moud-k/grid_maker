@@ -159,3 +159,12 @@ let colorAllCells = function()
         }
     }
 }
+
+let clearAllCells = function()
+{
+    let table_cells = document.getElementsByTagName("td");
+    for(let cell of table_cells)
+    {
+        cell.style.backgroundColor = "white";
+    }
+}
