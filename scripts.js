@@ -51,7 +51,7 @@ let addColumn = function()
     else
     {
         let table_rows = document.getElementsByTagName("tr");
-        for(row of table_rows)
+        for(let row of table_rows)
         {
             let new_cell = document.createElement("td");
             new_cell.onclick = function()
@@ -97,7 +97,7 @@ let removeColumn = function()
     else if(column_count > 1)
     {
         let table_rows = document.getElementsByTagName("tr");
-        for(row of table_rows)
+        for(let row of table_rows)
         {
             let cells_in_row = row.getElementsByTagName("td");
             cells_in_row[cells_in_row.length - 1].remove();
@@ -126,5 +126,23 @@ let colorCell = function(cell)
     if(color != -1)
     {
         cell.style.backgroundColor = color;
+    }
+}
+
+let colorAllUncoloredCells = function()
+{
+    let color = getColor();
+    if(color != -1)
+    {
+        let table_cells = document.getElementsByTagName("td");
+        for(let cell of table_cells)
+        {
+            let computedStyle = window.getComputedStyle(cell);
+            let backgroundColor = computedStyle.backgroundColor;
+            if(window.getComputedStyle(cell).backgroundColor == "white" || window.getComputedStyle(cell).backgroundColor == "rgb(255, 255, 255)")
+            {
+                cell.style.backgroundColor = color;
+            }
+        }
     }
 }
