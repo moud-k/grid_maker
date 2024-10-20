@@ -146,3 +146,16 @@ let colorAllUncoloredCells = function()
         }
     }
 }
+
+let colorAllCells = function()
+{
+    let color = getColor();
+    if(color != 1)
+    {
+        let table_cells = document.getElementsByTagName("td");
+        for(let cell of table_cells)
+        {
+            cell.style.backgroundColor = color;
+        }
+    }
+}
