@@ -168,3 +168,16 @@ let clearAllCells = function()
         cell.style.backgroundColor = "white";
     }
 }
+
+let changeBackground = function()
+{
+    let select = document.getElementsByTagName("select")[0];
+    if(getColor() == -1)
+    {
+        select.style.backgroundColor = "buttonface";
+    }
+    else
+    {
+        select.style.backgroundColor = getColor();
+    }
+}

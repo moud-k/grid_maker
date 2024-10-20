@@ -48,3 +48,9 @@ td{
     border-style: solid;
     border: 1px;
 }
+
+table
+{
+    margin-left: auto;
+    margin-right: auto;
+}
